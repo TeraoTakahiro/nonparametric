@@ -193,7 +193,7 @@ summary {
 
 <h1 class="title toc-ignore">「順序データの分析」補足資料</h1>
 <h4 class="author">大学入試センター研究開発部　寺尾 尚大</h4>
-<h4 class="date">2021/02/22</h4>
+<h4 class="date">2021/04/12</h4>
 
 </div>
 
@@ -206,7 +206,7 @@ summary {
 </ul>
 </div>
 
-<p>この資料は，月刊「臨床栄養」の第〇巻〇号「回答しやすく・分析しやすい　業務に活かせる！アンケート調査のキホンと応用」の第14回「順序データの分析」で用いたデータ例について，読者の理解をさらに深めるために作成されたものです。</p>
+<p>この資料は，月刊「臨床栄養」の第138巻5号「回答しやすく・分析しやすい　業務に活かせる！アンケート調査のキホンと応用」の第14回「順序データの分析」で用いたデータ例について，読者の理解をさらに深めるために作成されたものです。</p>
 <div id="対応のない2群の場合" class="section level1">
 <h1>対応のない2群の場合</h1>
 <div id="分析に使用したデータ" class="section level3">
@@ -396,17 +396,24 @@ outdoor
 </div>
 <div id="各群の順位和" class="section level3">
 <h3>各群の順位和</h3>
-<div id="インドア群" class="section level4">
-<h4>インドア群</h4>
+<div id="インドア群-300名" class="section level4">
+<h4>インドア群 (300名)</h4>
 <pre><code>## [1] 57959.5</code></pre>
 </div>
-<div id="アウトドア群" class="section level4">
-<h4>アウトドア群</h4>
+<div id="アウトドア群-300名" class="section level4">
+<h4>アウトドア群 (300名)</h4>
 <pre><code>## [1] 122340.5</code></pre>
 </div>
 </div>
 <div id="ウィルコクソンの順位和検定マンホイットニーのu検定" class="section level3">
 <h3>ウィルコクソンの順位和検定（マン・ホイットニーのU検定）</h3>
+<ul>
+<li>本データの分析にあたって使用した統計解析ソフトRでは，<code>exatRankTests</code>パッケージの<code>wilcox.exact()</code>という関数を用いて検定統計量を算出している
+<ul>
+<li>以下の出力結果ではウィルコクソンの順位和検定のWを表示しているように見えるが，実際はマン・ホイットニーのUを計算している</li>
+<li>詳細は，<a href="https://www.rdocumentation.org/packages/exactRankTests/versions/0.8-31/topics/wilcox.exact">RDocumentation: wilcox.exact</a> や <a href="https://data.library.virginia.edu/the-wilcoxon-rank-sum-test/">The Wilcoxon Rank Sum Test</a> が参考になる</li>
+</ul></li>
+</ul>
 <pre><code>## 
 ##  Asymptotic Wilcoxon rank sum test
 ## 
@@ -494,9 +501,14 @@ Donichi
 <div id="度数分布表の確認-1" class="section level3">
 <h3>度数分布表の確認</h3>
 <ul>
-<li>差得点（0～3）とそれに対応する順序データ・人数を表している
+<li>差得点は，平日の得点ー土日祝日の得点
 <ul>
-<li>例えば，差得点1の人152名には，「76.5」という順序データがつけられている</li>
+<li>差得点がプラスなら，平日＞土日祝日</li>
+<li>差得点がマイナスなら，平日＜土日祝日</li>
+</ul></li>
+<li>差得点の絶対値（0～3）とそれに対応する順序データ・人数を表している
+<ul>
+<li>例えば，差得点の絶対値1の人152名には，「76.5」という順序データがつけられている</li>
 <li>差得点0の人には順序データをつけない</li>
 </ul></li>
 </ul>
@@ -571,12 +583,12 @@ Donichi
 </div>
 <div id="差得点がプラスの人とマイナスの人の順位和" class="section level3">
 <h3>差得点がプラスの人とマイナスの人の順位和</h3>
-<div id="差得点がプラスの人" class="section level4">
-<h4>差得点がプラスの人</h4>
+<div id="差得点がプラスの人-17名" class="section level4">
+<h4>差得点がプラスの人 (17名)</h4>
 <pre><code>## [1] 1300.5</code></pre>
 </div>
-<div id="差得点がマイナスの人" class="section level4">
-<h4>差得点がマイナスの人</h4>
+<div id="差得点がマイナスの人-219名" class="section level4">
+<h4>差得点がマイナスの人 (219名)</h4>
 <pre><code>## [1] 26665.5</code></pre>
 </div>
 </div>
@@ -751,21 +763,27 @@ score
 </div>
 <div id="各群の順位和-1" class="section level3">
 <h3>各群の順位和</h3>
-<div id="中1" class="section level4">
-<h4>中1</h4>
+<div id="中1-100名" class="section level4">
+<h4>中1 (100名)</h4>
 <pre><code>## [1] 21611</code></pre>
 </div>
-<div id="中2" class="section level4">
-<h4>中2</h4>
+<div id="中2-100名" class="section level4">
+<h4>中2 (100名)</h4>
 <pre><code>## [1] 12801</code></pre>
 </div>
-<div id="中3" class="section level4">
-<h4>中3</h4>
+<div id="中3-100名" class="section level4">
+<h4>中3 (100名)</h4>
 <pre><code>## [1] 10738</code></pre>
 </div>
 </div>
 <div id="クラスカルウォリス検定" class="section level3">
 <h3>クラスカル・ウォリス検定</h3>
+<ul>
+<li>クラスカル・ウォリス検定の検定統計量Hは，自由度（群の数ー1）のカイ二乗分布に近似的に従うことが知られている
+<ul>
+<li>以下の出力結果では，<code>Kruskal-Wallis chi-squared</code> を検定統計量Hとして解釈する</li>
+</ul></li>
+</ul>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
 ## 
